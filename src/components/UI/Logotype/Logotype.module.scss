@@ -1,0 +1,19 @@
+.logotype{
+    display: flex;
+    &__image{
+        width: 40px;
+        height: 40px;
+    }
+    &__text{
+        padding: 0 0 0 15px;
+    }
+    &__title{
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+    &__description{
+        font-size: 14px; 
+        color: #9D9D9D;
+    }
+}

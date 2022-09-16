@@ -1,0 +1,31 @@
+.search{
+    position: relative;
+    width: 250px;
+    height: 45px;
+    border: 1px solid #F3F3F3;
+    border-radius: 10px;
+    &__logo{
+        cursor: pointer;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        color: #E4E4E4;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 0 8px 0 12px;
+    }
+    &__input{
+        border: none;
+        width: 170px;
+        height: 45px;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        background-color: transparent;
+        margin: 0 0 0 40px;
+        padding: 0 40px 0 0;
+        outline: 0;
+        outline-offset: 0;
+    }
+}

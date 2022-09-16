@@ -1,0 +1,13 @@
+.catalog{
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 40px 0;
+        align-items: center;
+    }
+    &__title{
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
