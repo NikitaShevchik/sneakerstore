@@ -10,4 +10,11 @@
         font-size: 32px;
         font-weight: 700;
     }
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
 }
