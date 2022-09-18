@@ -1,13 +1,12 @@
 import React from "react";
 import styles from './User.module.scss'
-import { BiHeart, BiCart, BiUserCircle } from 'react-icons/bi';
+import { BiHeart, BiUserCircle } from 'react-icons/bi';
+import CartMenu from "../../elements/CartMenu/CartMenu";
 
 const User = () => {
     return (
         <div className={styles.user}>
-            <div className={styles.user__cart}>
-                <BiCart />
-            </div>
+            <CartMenu />
             <BiHeart />
             <BiUserCircle />
         </div>

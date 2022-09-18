@@ -1,0 +1,23 @@
+.emptycart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__image{
+        width: 120px;
+        height: 120px;
+    }
+    &__title{
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 21px 0 10px 0;
+        color: #000;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+        max-width: 400px;
+    }
+}
