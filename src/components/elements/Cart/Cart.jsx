@@ -1,19 +1,21 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsCartOpen } from "../../../redux/isCartOpen/reducer";
 import EmptyCart from "../../UI/Cart/EmptyCart/EmptyCart";
+import OrderDone from "../../UI/Cart/OrderDone/OrderDone";
 import styles from './Cart.module.scss';
 
-const Cart = ({ isCartOpen, setIsCartOpen }) => {
-
-    function closeMenu(e) {
-        console.log(e.currentTarget.classList.contains(`${styles.cart}`))
-        // if (e.target.classList.contains('cart_menu')) {
-        //     console.log('cart__menu')
-        // }
+const Cart = () => {
+    const dispatch = useDispatch()
+    // const isCartOpen = useSelector((state) => state.cartOpen.isCartOpen)
+    const handleClick = (e) => {
+        dispatch(setIsCartOpen())
     }
 
     return (
-        <div className={styles.cart} onClick={e => closeMenu(e)}>
+        <div className={styles.cart}>
+            <div className={styles.cart__background} onClick={handleClick}></div>
             <div className={styles.cart__menu}>
                 <div className={styles.cart__content}>
                     <div className={styles.cart__content_flex}>

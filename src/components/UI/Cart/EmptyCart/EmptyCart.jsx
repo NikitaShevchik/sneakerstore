@@ -1,5 +1,6 @@
 import React from "react";
 import emptycart from '../../../../images/emptycart.svg';
+import ButtonBackCart from "../../ButtonBackCart/ButtonBackCart";
 import styles from './EmptyCart.module.scss'
 
 const EmptyCart = () => {
@@ -12,6 +13,7 @@ const EmptyCart = () => {
             <div className={styles.emptycart__text}>
                 Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.
             </div>
+            <ButtonBackCart />
         </div>
     )
 }
