@@ -49,11 +49,36 @@
         background-color: transparent;
         font-size: 18px;
         color: #D3D3D3;
+        &:hover{
+            transition: all 0.1s linear;
+            border-color: #87C20A;
+            color: #87C20A;
+        }
     }
     &__plus{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    &__incart{
+        transition: all 0.2s linear;
+        position: relative;
+        border: none;
+        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        background-color: #87C20A;
+        font-size: 18px;
+        color: #fff;
+        &:hover{
+            background-color: #c20a0a;
+        }
+    }
+    &__check{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 }

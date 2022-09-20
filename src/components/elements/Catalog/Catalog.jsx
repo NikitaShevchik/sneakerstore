@@ -18,12 +18,7 @@ const Catalog = () => {
                     return (
                         <CardItem
                             key={product.id}
-                            id={product.id}
-                            img={product.img}
-                            sex={product.sex}
-                            name={product.name}
-                            brand={product.brand}
-                            price={product.price}
+                            product={product}
                         />
                     )
                 })}
