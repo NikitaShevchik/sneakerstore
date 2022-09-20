@@ -3,9 +3,9 @@
     height: 260px;
     border: 1px solid #F3F3F3;
     border-radius: 40px;
-    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
     &__content{
         padding: 20px 25px;
+        position: relative;
     }
     &__image{
         width: 160px;
@@ -80,5 +80,57 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &__like{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    &__favorite{
+        position: absolute;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        position: relative;
+        border: 1px solid #F2F2F2;
+        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        background-color: transparent;
+        font-size: 18px;
+        color: #D3D3D3;
+        &:hover{
+            border-color: #FEF0F0;
+            transition: all 0.2s linear;
+            color: #FF8585;
+        }
+    }
+    &__favoriteadded{
+        position: absolute;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        position: relative;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        background-color: #FEF0F0;
+        font-size: 18px;
+        color: #D3D3D3;
+    }
+    &__hearthfill{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FF8585;
+    }
+    &__hearthoutline{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover{
+        box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
     }
 }

@@ -1,0 +1,38 @@
+.favorites{
+    &__items{
+        display: flex;
+        gap: 20px;
+    }
+    &__header{
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+    }
+    &__title{
+        font-size: 32px;
+        font-weight: 700;
+        padding: 0 0 0 20px;
+    }
+    &__back{
+        transition: all 0.2s linear;
+        position: relative;
+        border: 1px solid #F2F2F2;
+        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        background-color: transparent;
+        font-size: 18px;
+        color: #D3D3D3;
+        &:hover{
+            transition: all 0.2s linear;
+            color: #b3b3b3;
+            border-color: #b3b3b3;
+        }
+    }
+    &__arrow{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

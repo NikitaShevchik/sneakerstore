@@ -8,6 +8,9 @@ const Slider = () => {
     return (
         <div className={styles.slider}>
             <div className={styles.slider__body}>
+                <div className={styles.slider__image}>
+
+                </div>
                 <div className={styles.slider__text}>
                     <span>I'm future slider</span>
                 </div>

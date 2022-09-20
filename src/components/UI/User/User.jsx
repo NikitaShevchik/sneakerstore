@@ -2,12 +2,14 @@ import React from "react";
 import styles from './User.module.scss'
 import { BiHeart, BiUserCircle } from 'react-icons/bi';
 import CartMenu from "../../elements/CartMenu/CartMenu";
+import { useNavigate } from "react-router-dom";
 
 const User = () => {
+    const navigate = useNavigate();
     return (
         <div className={styles.user}>
             <CartMenu />
-            <BiHeart />
+            <BiHeart onClick={() => navigate('/favorites')} className={styles.user__favorite} />
             <BiUserCircle />
         </div>
     )
