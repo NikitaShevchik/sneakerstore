@@ -1,10 +1,13 @@
 import React from "react";
-import styles from './Logotype.module.scss'
 import logo from '../../../images/logo.svg'
+import { useNavigate } from "react-router-dom";
+import styles from './Logotype.module.scss'
 
 const Logotype = () => {
+    const navigate = useNavigate()
+    const mainPage = () => { navigate('/') }
     return (
-        <div className={styles.logotype}>
+        <div className={styles.logotype} onClick={mainPage}>
             <div className={styles.logotype__image}>
                 <img src={logo} alt="LogoImg" />
             </div>
