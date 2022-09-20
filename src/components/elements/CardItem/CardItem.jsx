@@ -40,7 +40,6 @@ const CardItem = ({ product }) => {
                             <HiPlus className={styles.carditem__plus} />
                         </button>
                     }
-
                 </div>
             </div>
         </div>

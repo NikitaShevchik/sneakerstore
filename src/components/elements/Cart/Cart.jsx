@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsCartOpen } from "../../../redux/isCartOpen/reducer";
+import CartWithItems from "../../UI/Cart/CartWithItems/CartWithItems";
 import EmptyCart from "../../UI/Cart/EmptyCart/EmptyCart";
 import OrderDone from "../../UI/Cart/OrderDone/OrderDone";
 import styles from './Cart.module.scss';
@@ -9,6 +10,7 @@ import styles from './Cart.module.scss';
 const Cart = () => {
     const dispatch = useDispatch()
     // const isCartOpen = useSelector((state) => state.cartOpen.isCartOpen)
+    const cart = useSelector((state) => state.cart.itemsInCart)
     const handleClick = (e) => {
         dispatch(setIsCartOpen())
     }
@@ -22,10 +24,12 @@ const Cart = () => {
                         <div className={styles.cart__title}>
                             Корзина
                         </div>
-                        <EmptyCart />
-                        <div>
-                            Button to order
-                        </div>
+                        {cart.length > 0
+                            ?
+                            <CartWithItems />
+                            :
+                            <EmptyCart />
+                        }
                     </div>
                 </div>
             </div>

@@ -7,4 +7,24 @@
         color: #5C5C5C;
         font-weight: 600;
     }
+    &__carticon{
+        position: relative;
+    }
+    &__redcircle{
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        color: #fff;
+        font-size: 9px;
+        background-color: #e60d0d;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }

@@ -1,0 +1,20 @@
+.button{
+    width: 100%;
+    border: none;
+    border-radius: 18px;
+    background-color: #9DD458;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    padding: 18px 0;
+    justify-content: center;
+    align-items: center;
+    &__arrow{
+        transform: rotate(180deg);
+        font-size: 23px;
+    }
+    &__text{
+        padding: 0 12px;
+    }
+}

@@ -1,0 +1,21 @@
+.total{
+    color: #000;
+    &__price{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+    &__tax{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+    &__line{
+        flex: 1 1 auto;
+        margin: 0 10px;
+        border-bottom: 1px dashed #DFDFDF;
+    }
+    &__amount{
+        font-weight: 600;
+    }
+}

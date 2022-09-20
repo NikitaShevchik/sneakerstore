@@ -12,9 +12,6 @@ const CartMenu = () => {
     const cart = useSelector((state) => state.cart.itemsInCart);
 
     const totalPrice = cart.reduce((acc, cart) => acc += cart.price, 0)
-    const priceInCart = () => {
-        return cart.find
-    }
 
     const handleClick = (e) => {
         dispatch(setIsCartOpen())
@@ -23,7 +20,10 @@ const CartMenu = () => {
     return (
         <>
             <div className={styles.cartmenu} onClick={handleClick}>
-                <BiCart />
+                <div className={styles.cartmenu__carticon}>
+                    <BiCart />
+                    {cart.length > 0 && <div className={styles.cartmenu__redcircle}><span>{cart.length}</span></div>}
+                </div>
                 {totalPrice > 0 && <span className={styles.cartmenu__amount}>{totalPrice} руб.</span>}
             </div>
             {isCartOpen ? <Cart /> : ''}
