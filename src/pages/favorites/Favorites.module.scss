@@ -1,7 +1,11 @@
+.fav{
+    height: calc(100vh - 200px);
+}
 .favorites{
     &__items{
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
     }
     &__header{
         padding: 40px 0;
