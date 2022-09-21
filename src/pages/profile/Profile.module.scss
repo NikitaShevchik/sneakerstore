@@ -1,9 +1,11 @@
+.prof{
+    height: calc(100vh - 200px);
+}
 .profile{
     &__items{
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     &__header{
         padding: 40px 0;

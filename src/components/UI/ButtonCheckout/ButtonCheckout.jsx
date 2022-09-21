@@ -4,10 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from 'nanoid'
 import { setItemsInOrder } from "../../../redux/orders/reducer";
 import styles from './ButtonCheckout.module.scss'
+import { deleteItemInCart } from "../../../redux/cart/reducer";
+import { setOrderCounter, setOrderDone } from "../../../redux/orderCounter/reducer";
 
 const ButtonCheckout = () => {
     const cart = useSelector((state) => state.cart.itemsInCart);
     const orders = useSelector((state) => state.orders.orderItems);
+    const orderNumber = useSelector((state) => state.ordersCounter.orderCounter)
     const dispatch = useDispatch()
     function id() {
         return nanoid();
@@ -15,7 +18,10 @@ const ButtonCheckout = () => {
     const handleClick = () => {
         cart.map(product => {
             dispatch(setItemsInOrder({ ...product, id: id() }))
+            dispatch(deleteItemInCart(product.id))
         })
+        dispatch(setOrderCounter())
+        dispatch(setOrderDone())
     }
     return (
         <div>

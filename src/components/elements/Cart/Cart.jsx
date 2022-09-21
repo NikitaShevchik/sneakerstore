@@ -10,6 +10,7 @@ import styles from './Cart.module.scss';
 const Cart = () => {
     const dispatch = useDispatch()
     // const isCartOpen = useSelector((state) => state.cartOpen.isCartOpen)
+    const isOrderDone = useSelector((state) => state.ordersCounter.orderDone)
     const cart = useSelector((state) => state.cart.itemsInCart)
     const handleClick = (e) => {
         dispatch(setIsCartOpen())
@@ -28,7 +29,7 @@ const Cart = () => {
                             ?
                             <CartWithItems />
                             :
-                            <EmptyCart />
+                            isOrderDone ? <OrderDone /> : <EmptyCart />
                         }
                     </div>
                 </div>
