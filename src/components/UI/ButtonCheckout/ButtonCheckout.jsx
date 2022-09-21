@@ -1,12 +1,21 @@
 import React from "react";
 import { FiChevronLeft } from 'react-icons/fi';
-import { useDispatch } from "react-redux";
-import { setIsCartOpen } from "../../../redux/isCartOpen/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import { nanoid } from 'nanoid'
+import { setItemsInOrder } from "../../../redux/orders/reducer";
 import styles from './ButtonCheckout.module.scss'
 
 const ButtonCheckout = () => {
-    const handleClick = (e) => {
-
+    const cart = useSelector((state) => state.cart.itemsInCart);
+    const orders = useSelector((state) => state.orders.orderItems);
+    const dispatch = useDispatch()
+    function id() {
+        return nanoid();
+    }
+    const handleClick = () => {
+        cart.map(product => {
+            dispatch(setItemsInOrder({ ...product, id: id() }))
+        })
     }
     return (
         <div>

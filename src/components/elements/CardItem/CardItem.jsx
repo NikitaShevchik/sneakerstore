@@ -11,7 +11,6 @@ const CardItem = ({ product }) => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.itemsInCart);
     const favorites = useSelector((state) => state.favorites.itemsInFavorites)
-    console.log(favorites)
     // const isCartOpen = useSelector((state) => state.cartOpen.isCartOpen)
     const addInCart = () => {
         dispatch(setItemInCart(product))

@@ -21,7 +21,7 @@ const CartMenu = () => {
         <>
             <div className={styles.cartmenu} onClick={handleClick}>
                 <div className={styles.cartmenu__carticon}>
-                    <BiCart />
+                    <BiCart className={styles.cartmenu__cart}/>
                     {cart.length > 0 && <div className={styles.cartmenu__redcircle}><span>{cart.length}</span></div>}
                 </div>
                 {totalPrice > 0 && <span className={styles.cartmenu__amount}>{totalPrice} руб.</span>}

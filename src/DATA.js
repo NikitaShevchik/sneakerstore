@@ -100,6 +100,5 @@ export const DATA = [
         name: 'Air Force 1 shadow total orange',
         brand: 'Nike',
         price: 24500
-    }
-
+    },
 ]

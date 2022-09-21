@@ -11,6 +11,7 @@ import './App.scss';
 import { Provider } from 'react-redux';
 import HomePage from './pages/homepage/HomePage';
 import Favorites from './pages/favorites/Favorites';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
         </div>
       </Router>
