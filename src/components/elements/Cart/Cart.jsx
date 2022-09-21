@@ -5,6 +5,7 @@ import { setIsCartOpen } from "../../../redux/isCartOpen/reducer";
 import CartWithItems from "../../UI/Cart/CartWithItems/CartWithItems";
 import EmptyCart from "../../UI/Cart/EmptyCart/EmptyCart";
 import OrderDone from "../../UI/Cart/OrderDone/OrderDone";
+import { setOrderDone } from "../../../redux/orderCounter/reducer";
 import styles from './Cart.module.scss';
 
 const Cart = () => {
@@ -14,6 +15,9 @@ const Cart = () => {
     const cart = useSelector((state) => state.cart.itemsInCart)
     const handleClick = (e) => {
         dispatch(setIsCartOpen())
+        if (isOrderDone) {
+            dispatch(setOrderDone())
+        }
     }
 
     return (
