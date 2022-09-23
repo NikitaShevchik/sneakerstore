@@ -30,4 +30,7 @@ function App() {
   )
 }
 
+// https://632c38cd5568d3cad880126d.mockapi.io/items
+// https://mockapi.io/projects/632c38cd5568d3cad880126e wia github
+
 export default App;
