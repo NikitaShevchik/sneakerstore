@@ -1,0 +1,26 @@
+.footer{
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #e3e3e3;
+    height: 70px;
+
+    &:before{
+        content: '';
+        position: absolute;
+        height: 1px;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%,
+        rgba(234,234,234,1) 8%,
+        rgba(234,234,234,1) 50%, 
+        rgba(234,234,234,1) 92%, 
+        rgba(255,255,255,0) 100%);
+        width: calc(100% + 120px);
+        top: 0;
+        left: -60px;
+    }
+}
