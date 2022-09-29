@@ -7,6 +7,8 @@ import { nanoid } from 'nanoid'
 import styles from './Catalog.module.scss'
 import { json } from "react-router-dom";
 import { useEffect } from "react";
+import EmptyCardItem from "../../UI/EmptyCardItem/EmptyCardItem";
+import EmptyCatalogItems from "./EmptyCatalogItems";
 
 function id() {
     return nanoid();
@@ -14,7 +16,7 @@ function id() {
 
 const Catalog = () => {
 
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState(null)
     useEffect(() => {
         fetch('https://632c38cd5568d3cad880126d.mockapi.io/items')
             .then((res) => {
@@ -37,14 +39,19 @@ const Catalog = () => {
                 <Search />
             </div>
             <div className={styles.catalog__items}>
-                {items.map(product => {
-                    return (
-                        <CardItem
-                            key={product.id}
-                            product={product}
-                        />
-                    )
-                })}
+                {items
+                    ?
+                    items.map(product => {
+                        return (
+                            <CardItem
+                                key={product.id}
+                                product={product}
+                            />
+                        )
+                    })
+                    :
+                    <EmptyCatalogItems />
+                }
             </div>
         </div >
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import { GrFormNext } from 'react-icons/gr';
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 import styles from './Slider.module.scss'
 
@@ -8,6 +8,9 @@ const Slider = () => {
     return (
         <div className={styles.slider}>
             <div className={styles.slider__body}>
+                <div className={styles.slider__prev}>
+                    <GrFormPrevious />
+                </div>
                 <div className={styles.slider__image}>
 
                 </div>
