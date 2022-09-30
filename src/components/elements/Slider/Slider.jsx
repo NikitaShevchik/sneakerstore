@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { FcNext, FcPrevious } from 'react-icons/fc';
-import styles from './Slider.module.scss'
+import { nanoid } from "nanoid";
+import styles from './Slider.module.scss';
 
+function id() {
+    return nanoid()
+}
 
 const Slider = () => {
+
+    const [banners, setBanners] = useState([])
+    useEffect(() => {
+        fetch('https://632c38cd5568d3cad880126d.mockapi.io/banners')
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                console.log(json)
+                setBanners(json.map(banner => {
+                    return { ...banner, id: id() }
+                }))
+            })
+    }, []);
+
     return (
         <div className={styles.slider}>
             <div className={styles.slider__body}>
@@ -12,15 +31,16 @@ const Slider = () => {
                     <GrFormPrevious />
                 </div>
                 <div className={styles.slider__image}>
-
+                    <img src={banners.logo} alt={banners.name} />
                 </div>
                 <div className={styles.slider__text}>
-                    <span>I'm future slider</span>
+                    <span>{banners.name}</span>
                 </div>
                 <div className={styles.slider__next}>
                     <GrFormNext />
                 </div>
             </div>
+            <span>{banners.name}</span>
         </div>
     )
 }

@@ -23,7 +23,6 @@ const Catalog = () => {
                 return res.json();
             })
             .then((json) => {
-                console.log(items)
                 setItems(json.map(item => {
                     return { ...item, id: id() }
                 }))
