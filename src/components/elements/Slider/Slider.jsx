@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 import { nanoid } from "nanoid";
+import SliderBanner from "../../UI/SliderBanner/SliderBanner";
 import styles from './Slider.module.scss';
 
 function id() {
@@ -9,8 +10,9 @@ function id() {
 }
 
 const Slider = () => {
-
     const [banners, setBanners] = useState([])
+    const [numberSlider, setNumberSlider] = useState(0)
+
     useEffect(() => {
         fetch('https://632c38cd5568d3cad880126d.mockapi.io/banners')
             .then((res) => {
@@ -24,24 +26,33 @@ const Slider = () => {
             })
     }, []);
 
+    const x = 100;
+    const y = 100;
+    const styltrans = {
+        transform: `translate(-${x}px, ${y}px)`
+    };
+
+    console.log(styltrans)
     return (
         <div className={styles.slider}>
+            <div className={styles.slider__prev}>
+                <GrFormPrevious />
+            </div>
             <div className={styles.slider__body}>
-                <div className={styles.slider__prev}>
-                    <GrFormPrevious />
-                </div>
-                <div className={styles.slider__image}>
-                    <img src={banners.logo} alt={banners.name} />
-                </div>
-                <div className={styles.slider__text}>
-                    <span>{banners.name}</span>
-                </div>
-                <div className={styles.slider__next}>
-                    <GrFormNext />
+                <div className={styles.slider__slider} styles={styltrans}>
+                    {banners.map(banner => {
+                        return (
+                            <div className={styles.slider__banner} key={banner.id}>
+                                <SliderBanner key={banner.id} banner={banner} />
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
-            <span>{banners.name}</span>
-        </div>
+            <div className={styles.slider__next}>
+                <GrFormNext />
+            </div>
+        </div >
     )
 }
 

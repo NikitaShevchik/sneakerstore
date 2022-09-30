@@ -1,28 +1,36 @@
 .slider{
     padding: 40px 0 0 0;
+    position: relative;
     &__body{
         position: relative;
         background-color:   transparent; //#F4EFE9
         border-radius: 20px;
         height: 300px;
         width: 960px;
+        overflow: hidden;
     }
-    &__image{
-        width: 940px;
-        img{
-            position: absolute;
-            z-index: 0;
-            width: 950px;
-            height: 100%;
-            object-fit: scale-down;
-        }
+    &__banner{
     }
-    &__text{
+    &__slider{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
+        flex-direction: row;
     }
+    // &__image{
+    //     width: 940px;
+    //     img{
+    //         position: absolute;
+    //         z-index: 0;
+    //         width: 950px;
+    //         height: 100%;
+    //         object-fit: scale-down;
+    //     }
+    // }
+    // &__text{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     height: 100%;
+    // }
     &__next{
         cursor: pointer;
         position: absolute;
@@ -40,6 +48,7 @@
     }
     &__prev{
         cursor: pointer;
+        z-index: 1;
         position: absolute;
         display: flex;
         align-items: center;
