@@ -10,10 +10,13 @@
         overflow: hidden;
     }
     &__banner{
+        // transform: translate(-100%, 0);
     }
     &__slider{
         display: flex;
         flex-direction: row;
+        transition: transform 0.6s ease-in-out;
+        // transform: translate(-100%, 0);
     }
     // &__image{
     //     width: 940px;

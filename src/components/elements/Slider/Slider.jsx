@@ -26,20 +26,20 @@ const Slider = () => {
             })
     }, []);
 
-    const x = 100;
-    const y = 100;
-    const styltrans = {
-        transform: `translate(-${x}px, ${y}px)`
-    };
-
-    console.log(styltrans)
+    const styless = {
+        transform: `translate(-${numberSlider * 100}%, 0)`
+    }
+    console.log(banners.length)
     return (
         <div className={styles.slider}>
-            <div className={styles.slider__prev}>
-                <GrFormPrevious />
-            </div>
+            {numberSlider > 0 &&
+                <div className={styles.slider__prev} onClick={() => setNumberSlider(numberSlider - 1)}>
+                    <GrFormPrevious />
+                </div>
+            }
+
             <div className={styles.slider__body}>
-                <div className={styles.slider__slider} styles={styltrans}>
+                <div className={styles.slider__slider} style={styless}>
                     {banners.map(banner => {
                         return (
                             <div className={styles.slider__banner} key={banner.id}>
@@ -49,9 +49,11 @@ const Slider = () => {
                     })}
                 </div>
             </div>
-            <div className={styles.slider__next}>
-                <GrFormNext />
-            </div>
+            {numberSlider < banners.length - 1 &&
+                <div className={styles.slider__next} onClick={() => setNumberSlider(numberSlider + 1)}>
+                    <GrFormNext />
+                </div>
+            }
         </div >
     )
 }
