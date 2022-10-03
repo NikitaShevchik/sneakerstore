@@ -35,7 +35,6 @@ const Slider = () => {
                     <GrFormPrevious />
                 </div>
             }
-
             <div className={styles.slider__body}>
                 <div className={styles.slider__slider} style={styless}>
                     {banners.map(banner => {
