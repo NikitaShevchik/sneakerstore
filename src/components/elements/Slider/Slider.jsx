@@ -19,7 +19,6 @@ const Slider = () => {
                 return res.json();
             })
             .then((json) => {
-                console.log(json)
                 setBanners(json.map(banner => {
                     return { ...banner, id: id() }
                 }))
@@ -29,7 +28,6 @@ const Slider = () => {
     const styless = {
         transform: `translate(-${numberSlider * 100}%, 0)`
     }
-    console.log(banners.length)
     return (
         <div className={styles.slider}>
             {numberSlider > 0 &&

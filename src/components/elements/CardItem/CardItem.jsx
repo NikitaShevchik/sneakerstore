@@ -3,8 +3,8 @@ import { HiPlus, HiCheck } from 'react-icons/hi';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { useDispatch, useSelector } from "react-redux";
 import { deleteItemInCart, setItemInCart } from "../../../redux/cart/reducer";
-import styles from './CardItem.module.scss';
 import { deleteItemInFavorites, setItemInFavorites } from "../../../redux/favorites/reducer";
+import styles from './CardItem.module.scss';
 
 
 const CardItem = ({ product }) => {
@@ -44,7 +44,7 @@ const CardItem = ({ product }) => {
                     <img src={product.img} alt={product.name} />
                 </div>
                 <div className={styles.carditem__name}>
-                    {product.sex === 'male' ? 'Мужские кроссовки' : 'Женские кроссовки'} {product.brand} {product.name}
+                    {product.sex === 'male' ? 'Мужские кроссовки' : 'Женские кроссовки'} {product.name}
                 </div>
                 <div className={styles.carditem__buy}>
                     <div className={styles.carditem__price}>

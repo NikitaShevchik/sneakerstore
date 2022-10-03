@@ -4,6 +4,7 @@ import cartReducer from './cart/reducer';
 import favoritesReducer from './favorites/reducer'
 import ordersReducer from './orders/reducer'
 import ordersCounterReducer from './orderCounter/reducer'
+import searchFieldReducer from './search/reducer'
 
 export const store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
         favorites: favoritesReducer,
         orders: ordersReducer,
         ordersCounter: ordersCounterReducer,
+        searchField: searchFieldReducer,
     }
 })

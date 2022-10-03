@@ -9,6 +9,8 @@
     &__title{
         font-size: 32px;
         font-weight: 700;
+        max-width: 70%;
+        word-wrap: break-word;
     }
     &__items{
         display: flex;
@@ -16,5 +18,18 @@
         justify-items: center;
         flex-wrap: wrap;
         gap: 40px;
+    }
+    &__emptysearch{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.5;
+        align-items: center;
+        height: 260px;
+    }
+    &__emptysearch_title{
+        font-size: 22px;
+        color: #FF8585;
+        font-weight: 600;
     }
 }

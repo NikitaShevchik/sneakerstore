@@ -7,12 +7,12 @@ import {
   Routes,
 } from "react-router-dom";
 import { store } from './redux'
-import './App.scss';
 import { Provider } from 'react-redux';
 import HomePage from './pages/homepage/HomePage';
 import Favorites from './pages/favorites/Favorites';
 import Profile from './pages/profile/Profile';
 import Footer from './components/elements/Footer/Footer';
+import './App.scss';
 
 function App() {
   return (

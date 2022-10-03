@@ -1,0 +1,9 @@
+.cross{
+    font-size: 20px;
+    cursor: pointer;
+    color: #FF8585;
+    &:hover{
+        transition: all 0.2s linear;
+        color: #d10000;
+    }
+}
