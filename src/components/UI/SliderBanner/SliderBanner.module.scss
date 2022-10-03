@@ -6,7 +6,7 @@
     background: linear-gradient(90deg, rgb(250, 250, 250) 0%, rgba(255,235,231,0.5) 100%);
     &__content{
         position: relative;
-        padding: 20px 40px;
+        padding: 20px 50px;
         height: 300px;
     }
     &__sneaker{
@@ -20,7 +20,7 @@
     }
     &__logo{
         position: absolute;
-        left: 40px;
+        left: 50px;
         img{
             width: 50px;
         }

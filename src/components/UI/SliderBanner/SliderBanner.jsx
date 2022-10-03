@@ -14,12 +14,8 @@ const SliderBanner = ({ banner }) => {
                     {banner.name}
                 </div>
                 <div className={styles.banner__text}>
-                    <span className={styles.banner__brandname} style={{ color: `${banner.color}` }}>
-                        {banner.brand},
-                    </span>
-                    <span className={styles.banner__slogan}>
-                        {banner.slogan}
-                    </span>
+                    <span className={styles.banner__brandname} style={{ color: `${banner.color}` }}>{banner.brand}, </span>
+                    <span className={styles.banner__slogan}>{banner.slogan}</span>
                 </div>
                 <button className={styles.banner__button} style={{ backgroundColor: banner.color }}>
                     {banner.buttonText}
