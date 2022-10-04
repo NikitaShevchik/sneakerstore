@@ -22,7 +22,7 @@ const Catalog = () => {
     const dispatch = useDispatch()
     const [items, setItems] = useState(null)
     useEffect(() => {
-        fetch('https://632c38cd5568d3cad880126d.mockapi.io/items')
+        fetch('https://632c38cd5568d3cad880126d.mockapi.i/items')
             .then((res) => {
                 return res.json();
             })
