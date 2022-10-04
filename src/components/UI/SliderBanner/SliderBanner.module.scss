@@ -15,6 +15,7 @@
         top: 30%;
         transform: rotate(20deg);
         img{
+            user-select: none;
             width: 400px;
         }
     }
@@ -22,6 +23,7 @@
         position: absolute;
         left: 50px;
         img{
+            user-select: none;
             width: 50px;
         }
     }
@@ -33,6 +35,7 @@
         font-size: 16px;
         font-weight: 700;
         transform: rotate(-90deg);
+        user-select: none;
     }
     &__text{
         margin-top: 60px;
@@ -44,9 +47,10 @@
         margin-top: 100px;
     }
     &__slogan{
-
     }
     &__button{
+        transition: opacity 0.3s linear;
+        opacity: 0.6;
         margin-top: 30px;
         border: none;
         color: #f3f3f3;
@@ -55,5 +59,9 @@
         font-weight: 700;
         font-size: 16px;
         border-radius: 110px;
+        &:hover{
+            transition: opacity 0.3s linear;
+            opacity: 1;
+        }
     }
 }
