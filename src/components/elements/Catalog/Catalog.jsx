@@ -23,16 +23,6 @@ const Catalog = () => {
     const dispatch = useDispatch()
     const [items, setItems] = useState(null)
     useEffect(() => {
-        // fetch('https://632c38cd5568d3cad880126d.mockapi.io/items')
-        //     .then((res) => {
-        //         return res.json();
-        //     })
-        //     .then((json) => {
-        //         setItems(json.map(item => {
-        //             return { ...item, id: id() }
-        //         }))
-        //     })
-
         axios.get('https://632c38cd5568d3cad880126d.mockapi.io/items').then(res => {
             setItems(res.data.map(item => { return { ...item, id: id() } }))
         })
