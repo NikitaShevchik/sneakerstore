@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { DATA } from "../../../DATA";
+import axios from 'axios'
 import Search from "../../UI/Search/Search";
 import CardItem from "../CardItem/CardItem";
 import { nanoid } from 'nanoid'
@@ -22,15 +23,20 @@ const Catalog = () => {
     const dispatch = useDispatch()
     const [items, setItems] = useState(null)
     useEffect(() => {
-        fetch('https://632c38cd5568d3cad880126d.mockapi.i/items')
-            .then((res) => {
-                return res.json();
-            })
-            .then((json) => {
-                setItems(json.map(item => {
-                    return { ...item, id: id() }
-                }))
-            })
+        // fetch('https://632c38cd5568d3cad880126d.mockapi.io/items')
+        //     .then((res) => {
+        //         return res.json();
+        //     })
+        //     .then((json) => {
+        //         setItems(json.map(item => {
+        //             return { ...item, id: id() }
+        //         }))
+        //     })
+
+        axios.get('https://632c38cd5568d3cad880126d.mockapi.io/items').then(res => {
+            setItems(res.data.map(item => { return { ...item, id: id() } }))
+        })
+        // axios.post('https://632c38cd5568d3cad880126d.mockapi.io/cart')
     }, []);
     const clearSearch = () => {
         dispatch(setSearchField(""))

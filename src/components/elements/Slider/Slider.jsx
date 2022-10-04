@@ -4,6 +4,7 @@ import { FcNext, FcPrevious } from 'react-icons/fc';
 import { nanoid } from "nanoid";
 import SliderBanner from "../../UI/SliderBanner/SliderBanner";
 import styles from './Slider.module.scss';
+import axios from "axios";
 
 function id() {
     return nanoid()
@@ -14,15 +15,11 @@ const Slider = () => {
     const [numberSlider, setNumberSlider] = useState(0)
 
     useEffect(() => {
-        fetch('https://632c38cd5568d3cad880126d.mockapi.io/banners')
-            .then((res) => {
-                return res.json();
-            })
-            .then((json) => {
-                setBanners(json.map(banner => {
-                    return { ...banner, id: id() }
-                }))
-            })
+        axios.get('https://632c38cd5568d3cad880126d.mockapi.io/banners').then(res => {
+            setBanners(res.data.map(banner => {
+                return { ...banner, id: id() }
+            }))
+        })
     }, []);
 
     const styless = {
