@@ -1,3 +1,3 @@
-# Whatch the work
+# Watch the work
 
 https://shevchiksneak.vercel.app/
